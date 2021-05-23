@@ -31,10 +31,6 @@ class m3508
         void m3508_init(CAN* _CAN);    
         CAN* can1;
         
-        //From VESC
-        int utils_truncate_number(float *number, float min, float max);
-        int utils_truncate_number_abs(float *number, float max);
-        
         //C620 function
         void c620_read();//The frequency needs to be at least 100Hz, or the motor will be too retard
         void c620_write();
@@ -51,7 +47,7 @@ class m3508
         float required_position[8]   = {0};
         int16_t required_velocity[8] = {0};//The Sam Shum's code use uint//HT
         int16_t motor_out[4] = {0};
-        
+        int8_t motor_num = 4;                // How many motor used, Maximum 8 
         //Debug Use
         int16_t s_current = 0;
         
